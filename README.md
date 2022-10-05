@@ -1,4 +1,4 @@
-# lab
+# Lab
  
 Este laboratório deve ser montado com as seguintes tecnologias: Vagrant, virsh, Docker, nginx e muito bash script.
  
