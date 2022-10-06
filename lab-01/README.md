@@ -1,9 +1,4 @@
-# Lab
-
-## Instruções:
-- Realizar um fork desse repositório.
-- Criar uma branch com o seu nome-sobrenome.
-- Realizar o pull request após a finalização do projeto.
+# Lab 01
 
 ## Objetivo 1
 Criar um ambiente de forma automatizada com base na seguinte estrutura:
