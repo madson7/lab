@@ -1,0 +1,23 @@
+#laboratorio de nodes com ansible
+#ENV['VAGRANT_DEFAULT_PROVIDER'] = 'libvirt'
+
+Vagrant.configure("2") do |config|
+
+  (1..2).each do |i|
+    config.vm.define "vm#{i}" do |node|
+      node.vm.box = "generic/ubuntu2004"
+      node.vm.network :private_network,
+        :libvirt__network_name => "cavalo",
+        :ip => "192.168.3.10#{i}"
+      node.vm.hostname = "cavalo#{i}"
+      node.vm.provision "shell", path: "vm_#{i}.sh"
+    end
+  end
+end
+
+## host cavalo1 ## vm1 server docker [ 192.168.3.101 ]
+## host cavalo2 ## vm2 proxy nginx   [ 192.168.3.102 ]
+
+##  portainer  # http://192.168.3.102:81/
+##  grafana    # http://192.168.3.102:82/
+
