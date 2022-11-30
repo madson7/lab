@@ -14,7 +14,7 @@ Criar um ambiente de forma automatizada com base na seguinte estrutura:
 
 ## Tecnologias sugeridas
 - Vagrant
-- Libirt 
+- Libvirt 
 - Docker
 - Nginx
 - Shell Script.
