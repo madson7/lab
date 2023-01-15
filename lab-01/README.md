@@ -46,7 +46,7 @@ Cria a VM docker e da o nome para o host.
 `
 
 - - docker.vm.network "private_network", ip: "192.168.56.10"  
-`
+<br>`
 Cria uma rede privada e força o ip fixo 192.168.56.10 para a maquina.
 tive que trabalhar na rede 192.168.56.0/24 por conta do range disponibilizado por padrão no virtualbox.
 `
