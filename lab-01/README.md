@@ -1,8 +1,9 @@
 # Lab 01
 
 ## Ambiente de densevolvimento
-   Estou utilizando ubuntu 22.04 lts e virtualbox como hipervisor.
-   Utilizei o Vagrant para automatizar a criação das VM's e SHELL SCRIPTS para configurar as maquinas.
+   - Estou utilizando ubuntu 22.04 lts e virtualbox como hipervisor.
+
+   - Utilizei o Vagrant para automatizar a criação das VM's e SHELL SCRIPTS para configurar as maquinas.
 
 
 - 01 - Vagrantfile para o provisionamento das 2 VM's;
@@ -32,16 +33,19 @@ end
 ```
 
 
---config.vm.box = "ubuntu/bionic64"
-    define a boxe que utilizei.
+- - config.vm.box = "ubuntu/bionic64"
+      define a boxe que utilizei.
 
 `
 No arquivo estou provisionando as duas VM's de uma vez então os comando são bem semelhantes. Vou citar a VM do servidor de containers e o por comparação, pode ser entendido o codigo referente a VM do servidor de proxy.
 `
 
+- - config.vm.define "docker" do |docker|
+    - docker.vm.hostname = "docker"
 
-
-
+`
+Cria a VM docker e da o nome para o host.
+`
 
 
 - 03 - Usando proxy para dar acesso a aplicação web do item 02;
