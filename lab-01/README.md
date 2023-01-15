@@ -34,33 +34,30 @@ end
 
 
 - - config.vm.box = "ubuntu/bionic64"
-      define a boxe que utilizei.
-
+    - define a boxe que utilizei.
 `
 No arquivo estou provisionando as duas VM's de uma vez então os comando são bem semelhantes. Vou citar a VM do servidor de containers e o por comparação, pode ser entendido o codigo referente a VM do servidor de proxy.
 `
 
 - - config.vm.define "docker" do |docker|
     - docker.vm.hostname = "docker"
-
 `
 Cria a VM docker e da o nome para o host.
 `
 
+- - docker.vm.network "private_network", ip: "192.168.56.10"
+`
+Cria uma rede privada e força o ip fixo 192.168.56.10 para a maquina.
+tive que trabalhar na rede 192.168.56.0/24 por conta do range disponibilizado por padrão no virtualbox.
+`
 
-- 03 - Usando proxy para dar acesso a aplicação web do item 02;
-- 04 - Os itens 02 e 03 devem ser automatizado na criação do ambiente;
+- - docker.vm.provision "shell", path: "docker.sh"
+`
+Executa o script shell docker.sh
+`
 
-## Objetivo 2
-- Documentar o processo requerido para provisionamento do ambiente criado.
-
-## Tecnologias sugeridas
-- Vagrant
-- Libvirt 
-- Docker
-- Nginx
-- Shell Script.
-
-## Diferencial
-- Organização de código
-- Ansible
+- - docker.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "~/.ssh/id_rsa.pub" 
+`
+Envia minha chave ssh publica para a Vm para que possa ser acessado via terminal posteriormente.
+Para que este comando funcione, deve ser criado um par de chaves ssh na home de seu Ubuntu, com o comando "sudo ssh-keygen"
+`
