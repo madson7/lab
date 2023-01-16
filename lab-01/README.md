@@ -105,9 +105,11 @@ EOF
 systemctl restart nginx
 ```
 `
-O script realiza a atualização do apt-get, instala o nginx, para servir com servidor de proxy reverso.    
+O script realiza a atualização do apt-get, instala o nginx, para servir com servidor de proxy reverso.  
 Na linha que começa com o comando cat, o script adiciona o bloco "server" no arquivo default de sites disponiveis do nginx.
 Após isto o serviço é reiniciado. 
 `
 
+``
 No bloco server, é configurado o proxy, o nginx fica escutando na sua porta 80 e redireciona a requisição para o endereço configurado em proxy_pass.
+``
