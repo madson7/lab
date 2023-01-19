@@ -2,6 +2,7 @@ version: '3'
 services:
   db:
     image: 'mariadb:latest'
+    container_name: db
     ports:
       - '3306:3306'
     restart: always  

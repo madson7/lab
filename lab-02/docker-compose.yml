@@ -1,9 +1,11 @@
 version: '3'
-services:
+services:  
   wp:
     image: 'wordpress:latest'
+    container_name: wp
     ports:
-     - '443:80'
+     - '8080:80'
+     - '443:433'
     restart: always
     environment:
       WORDPRESS_DB_HOST: 192.168.1.151:3306
