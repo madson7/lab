@@ -16,18 +16,24 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/bionic64"
 
-  config.vm.define "docker" do |docker|
-    docker.vm.hostname = "docker"
-    docker.vm.network "private_network", ip: "192.168.56.10"
-    docker.vm.provision "shell", path: "docker.sh"
-    docker.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "~/.ssh/id_rsa.pub" 
-  end
-
   config.vm.define "proxy" do |proxy|
     proxy.vm.hostname = "proxy"
+    proxy.ssh.insert_key = false
+    proxy.ssh.private_key_path = ["~/.ssh/id_rsa", "~/.vagrant.d/insecure_private_key"]
+    proxy.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "~/.ssh/authorized_keys"
+    proxy.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "~/.ssh/id_rsa.pub"
     proxy.vm.network "private_network", ip: "192.168.56.11"
     proxy.vm.provision "shell", path: "proxy.sh"
-    proxy.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "~/.ssh/id_rsa.pub" 
+  end
+
+  config.vm.define "docker" do |docker|
+    docker.vm.hostname = "docker"
+    docker.ssh.insert_key = false
+    docker.ssh.private_key_path = ["~/.ssh/id_rsa", "~/.vagrant.d/insecure_private_key"]
+    docker.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "~/.ssh/authorized_keys"
+    docker.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "~/.ssh/id_rsa.pub"
+    docker.vm.network "private_network", ip: "192.168.56.10"
+    docker.vm.provision "shell", path: "docker.sh"    
   end
 end
 ```
