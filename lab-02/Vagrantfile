@@ -7,8 +7,9 @@ Vagrant.configure("2") do |config|
 		#db.ssh.private_key_path = ["~/.ssh/id_rsa", "~/.vagrant.d/insecure_private_key"]
 		#db.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "~/.ssh/authorized_keys"
 		#db.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "~/.ssh/id_rsa.pub"
-		db.vm.network "public_network", ip:"192.168.1.151", bridge:	"wlp2s0"	  
-		db.vm.provision "file", source: "~/labmadson/lab/lab-02/docker-compose1.yml", destination: "~/docker-compose.yml" 
+		db.vm.network "public_network", ip:"192.168.2.111", bridge:	"wlp2s0"	  
+		#db.vm.network "public_network", ip:"192.168.2.1"
+		db.vm.provision "file", source: "/home/erlant/Documentos/lab-erlant.farias/lab-02/docker-compose1.yml", destination: "~/docker-compose.yml" 
 		db.vm.provision "shell", path: "db.sh"
 	end
 	config.vm.define "ubuntu" do |ubuntu|	
@@ -17,8 +18,9 @@ Vagrant.configure("2") do |config|
 		#ubuntu.ssh.private_key_path = ["~/.ssh/id_rsa2", "~/.vagrant.d/insecure_private_key"]
 		#ubuntu.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "~/.ssh/authorized_keys"
 		#ubuntu.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "~/.ssh/id_rsa.pub"
-		ubuntu.vm.network "public_network", ip:"192.168.1.171", bridge:	"wlp2s0"  
-		ubuntu.vm.provision "file", source: "~/labmadson/lab/lab-02/docker-compose.yml", destination: "~/docker-compose.yml" 
+		ubuntu.vm.network "public_network", ip:"192.168.2.110", bridge:	"wlp2s0"  
+		#ubuntu.vm.network "public_network", ip:"192.168.56.10"
+		ubuntu.vm.provision "file", source: "/home/erlant/Documentos/lab-erlant.farias/lab-02/docker-compose.yml", destination: "~/docker-compose.yml" 
 		ubuntu.vm.provision "shell", path: "wordpress.sh"
 	end
 
