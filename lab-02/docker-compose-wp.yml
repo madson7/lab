@@ -8,7 +8,7 @@ services:
       - '443:433'
     restart: always
     environment:
-      WORDPRESS_DB_HOST: 192.168.2.111:3306
+      WORDPRESS_DB_HOST: 192.168.1.111:3306
       WORDPRESS_DB_NAME: wordpress
       WORDPRESS_DB_USER: wpuser
       WORDPRESS_DB_PASSWORD: wppass
