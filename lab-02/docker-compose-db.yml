@@ -1,0 +1,17 @@
+version: '3'
+services:
+  db:
+    image: 'mysql:latest'
+    container_name: db
+    ports:
+      - '3306:3306'
+    restart: always  
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wpuser
+      MYSQL_PASSWORD: wppass
+    volumes:
+      - mysql:/var/lib/mysql
+volumes:
+  mysql:   
