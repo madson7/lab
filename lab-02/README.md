@@ -64,6 +64,7 @@ Para que este comando funcione, deve ser criado um par de chaves ssh na home de 
 `
 
 - db.vm.network "public_network", ip:"192.168.1.111", bridge: "wlp2s0"
+`
 Cria uma rede publica em modo bridge com minha interface de rede "wlp2s0" e força o ip fixo 192.168.1.110 para a maquina.
 `
 
