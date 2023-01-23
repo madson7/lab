@@ -6,6 +6,6 @@ As principais tecnologias utilizadas são:
 1. Vagrant
 2. Docker
 3. MySQL
-4. Shell scrip
+4. Shell script
 5. Virtualbox
 
