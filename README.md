@@ -1,3 +1,9 @@
 # Laboratório usando Vagrant
 
-Este é um laboratório que montei durante os estudos da ferramenta vagrant.
+Laboratório montado durante os estudos da ferramenta vagrant.
+
+Principais ecnologias usadas:
+1. Vagrant
+2. Docker
+3. Shell Scrip
+
