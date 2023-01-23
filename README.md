@@ -2,7 +2,7 @@
 
 Laboratório montado durante os estudos da ferramenta vagrant.
 
-Principais ecnologias usadas:
+Principais tecnologias usadas:
 1. Vagrant
 2. Docker
 3. Shell Scrip
