@@ -6,4 +6,6 @@ Principais ecnologias usadas:
 1. Vagrant
 2. Docker
 3. Shell Scrip
+4. Virtualbox
+5. Mysql
 
