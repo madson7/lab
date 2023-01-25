@@ -1,0 +1,39 @@
+version: '3.4'
+    
+networks:
+    wordpress_net:
+
+volumes:
+    mariadb_vol: 
+    wordpress_vol:  
+
+services:
+  servidor:
+    image: wordpress
+
+    networks:
+      - wordpress_net
+    volumes:
+      - wordpress_vol:/var/www/html
+    ports:
+      - 8081:80
+
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: senhawordpress
+      WORDPRESS_DB_NAME: wordpress
+
+  db:
+    image: mariadb
+
+    networks:
+      - wordpress_net
+    volumes:
+      - mariadb_vol:/var/lib/mysql
+
+    environment:
+        MYSQL_ROOT_PASSWORD: senharootwordpress
+        MYSQL_DATABASE: wordpress
+        MYSQL_USER: wordpress
+        MYSQL_PASSWORD: senhawordpress

@@ -1,0 +1,16 @@
+server {
+    # The listen directive serves content based on the port defined
+    listen 80; # For IPv4 addresses
+    listen [::]:80; # For IPv6 addresses
+
+    # Replace the below if you have a domain name pointed to the server
+    server_name your-domain.com;
+
+    access_log /var/log/nginx/reverse-access.log;
+    error_log /var/log/nginx/reverse-error.log;
+
+    location / {
+        # Specify the proxied server's address
+        proxy_pass http://192.168.128.71:8081/;
+    }
+}
