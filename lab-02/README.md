@@ -1,22 +1,11 @@
-# Lab 02
+# Laboratório usando Vagrant
 
-## Objetivo
-- Objetivo é criar um processo automatizado para instalação do WordPress em sua última versão;
-- O projeto dever ter duas VM;
-- A primeira VM para servidor web com a porta 443 aberta;
-- A segundo VM para banco de dados deverá ter a porta 3306 para a conexão da aplicação;
+Este é um laboratório desenvolvido durante os estudos da ferramenta Vagrant. 
+As principais tecnologias utilizadas são:
 
+1. Vagrant
+2. Docker
+3. MySQL
+4. Shell script
+5. Virtualbox
 
-## Tecnologias sugeridas
-- Vagrant
-- Libvirt, Virtualbox ou LXD
-- Docker
-- Nginx ou Apache2
-- Shell Script
-- Mysql
-
-
-## Diferencial
-- Organização de código
-- Ansible
-- Vagrant
